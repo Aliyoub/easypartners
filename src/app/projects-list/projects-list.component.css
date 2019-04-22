@@ -1,0 +1,4 @@
+ul.list-group li.list-group-item span.label{
+  margin-right: 0.01em;
+  display:inline-block;
+}

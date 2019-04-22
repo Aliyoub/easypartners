@@ -1,0 +1,15 @@
+li a.inscription{
+  background-color:#A5394B;
+  color:#ffffff;
+}
+li a.inscription:hover {
+  background-color:#E23237;
+}
+
+li a.connexion{
+  background-color:#2e6da4;
+  color:#ffffff;
+}
+li a.connexion:hover {
+  background-color:#337ab7;
+}
