@@ -1,16 +1,13 @@
-<app-jumbotron></app-jumbotron>
 <div class="card container" style="margin-bottom:19px">
   <div class="row">
     <ul class="list-group list-group-flush col-md-8 col-md-offset-2">
-      <li *ngFor = "let p of project; let i=index" class="list-group-item">{{i}} - Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae ex corrupti magnam maiores rem dicta sequi, culpa atque,
-      dignissimos explicabo amet adipisci necessitatibus excepturi fugiat quod impedit, vel soluta accusantium.
-            <div style="font-size: 1em; color:blue;text-align:center">
-              <span class="label label-warning">{{p.category}}</span>
-              <span class="label label-success"> {{p.country}} </span>
-              <span class="label label-primary">{{p.date}}</span>
-            <span class="label label-danger"><a style="color:#fff" routerLink="/">Répondre</a></span>
-
-        </div>
+      <li *ngFor = "let p of project; let i=index" class="list-group-item">{{p.project_content}}
+          <div>
+                <span class="label label-warning">{{p.category}}</span>
+                <span class="label label-success"> {{p.country}} </span>
+                <span class="label label-primary">{{p.date}}</span>
+              <span class="label label-danger"><a style="color:#fff" routerLink="/">Répondre</a></span>
+          </div>
       </li>
     </ul>
 

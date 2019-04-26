@@ -1,6 +1,7 @@
 export class Project {
-  id: number;
+  /* id: number;
   date: string;
   country: string;
-  category: string;
+  category: string; */
+  project_content: any;
 }

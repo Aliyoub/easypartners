@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+/* .ql-toolbar.ql-snow {
+  width: 1%
+} */
+div.ql-toolbar.ql-snow span.ql-formats button svg{
+  width:1em
+}
+/* .ql-snow {
+width:5em
+} */
+div.ql-tooltip.ql-hidden input {
+  display: none;
+
+}
