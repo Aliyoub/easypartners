@@ -15,4 +15,17 @@ export class AuthService {
       }).catch(err => rejected(err));
     });
   }
+  signup(email: string, password: string) {
+    return new Promise((resolve, rejected) => {
+      this.Afauth.auth.createUserWithEmailAndPassword(email, password).then(user => {
+        resolve(user);
+        console.log(user);
+      }).catch(err => rejected(err));
+    });
+  }
+
+  signOutUser() {
+    //firebase.auth().signOut();
+    this.Afauth.auth.signOut();
+  }
 }

@@ -1,6 +1,5 @@
 <app-navbar></app-navbar>
-<app-jumbotron></app-jumbotron>
-<!--app-projects-list></app-projects-list-->
+<div *ngIf="currentUrl !=='/operation'"><app-jumbotron></app-jumbotron></div>
 <router-outlet ></router-outlet>
 <app-footer></app-footer>
 

@@ -1,17 +1,24 @@
 <div class="card container" style="margin-bottom:19px">
   <div class="row">
+    <h3 style="text-align: center">Liste des annonces</h3>
     <ul class="list-group list-group-flush col-md-8 col-md-offset-2">
-      <li *ngFor = "let p of project; let i=index" class="list-group-item">{{p.project_content}}
-          <div>
+      <li *ngFor="let key of projectKeys; let i=index" class="list-group-item">{{projects[key][3]}}
+          <!-- <div>
                 <span class="label label-warning">{{p.category}}</span>
                 <span class="label label-success"> {{p.country}} </span>
                 <span class="label label-primary">{{p.date}}</span>
               <span class="label label-danger"><a style="color:#fff" routerLink="/">Répondre</a></span>
+          </div> -->
+          <div>
+                <span class="label label-warning">{{projects[key][2]}}</span>
+                <span class="label label-success"> {{projects[key][1]}} </span>
+                <span class="label label-primary">{{projects[key][0]}}</span>
+              <span class="label label-danger"><a style="color:#fff" routerLink="#">Répondre</a></span>
           </div>
       </li>
     </ul>
 
-<div class="dropdown">
+<!--div class="dropdown">
   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
     aria-expanded="true">
     Catégories
@@ -32,14 +39,7 @@
       <a href="#">Separated link</a>
     </li>
   </ul>
-</div>
-
-
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-  Launch demo modal
-</button>
+</div-->
 
   </div>
 </div>

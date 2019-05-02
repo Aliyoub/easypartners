@@ -1,19 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
 
 // import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { Subject } from 'rxjs';
+import { Router } from '@angular/router';
+
 
 @Component({
-  selector: "app-signin",
-  templateUrl: "./signin.component.html",
-  styleUrls: ["./signin.component.css"]
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.css']
 })
-export class SigninComponent implements OnInit {
+export class SignupComponent implements OnInit {
+
   public ngForm: NgForm;
-  errorMessage: string;
   /* email: string;
   password: string; */
   //public users = [];
@@ -25,15 +26,7 @@ export class SigninComponent implements OnInit {
     this.ngForm = f;
     const email = this.ngForm.value.email;
     const password = this.ngForm.value.password;
-    //this.authService.signin(email, password);
-
-    this.authService.signin(email, password).then(
-      () => {
-        this.router.navigate(['/projects']);
-      },
-      (error) => {
-        this.errorMessage = error;
-      }
-    );
+    this.authService.signup(email, password);
+    this.router.navigate(['/projects']);
   }
 }

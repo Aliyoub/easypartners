@@ -3,8 +3,14 @@
       <form [formGroup]="editorForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label for="editor"><h3>Editor</h3></label>
-          <quill-editor [style]="editorStyle" [modules]="config"
+          <input type="text" placeholder="Votre localité. exemple France" class="form-control" formControlName="country">
+          <input type="text" placeholder="La catégorie de votre domaine d'activité. exemple Santé"  class="form-control" formControlName="category">
+          <label for="editor"><h6>Veuillez entrer le contenu de votre annonce</h6></label>
+          <quill-editor format="text" preserveWhitespace="true"
+            placeholder="Veuillez entrer le contenu de votre annonce"
+            [style]="editorStyle" [modules]="config"
             formControlName="editor"></quill-editor>
+
           <button type="submit" class="btn btn-primary">Valider</button>
         </div>
       </form>

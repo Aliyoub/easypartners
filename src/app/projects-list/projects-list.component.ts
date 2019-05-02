@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Project } from '../project';
+import { Project } from '../project.model';
 import { ProjectService } from '../services/project.service';
 import { Subscription } from 'rxjs';
 
@@ -25,6 +25,7 @@ export class ProjectsListComponent implements OnInit, OnDestroy {
     );
     this.projectService.emitProjects();
   }
+
   ngOnDestroy() {
     this.projectsSubscription.unsubscribe();
   }

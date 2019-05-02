@@ -13,13 +13,14 @@ import { JumbotronComponent } from './jumbotron/jumbotron.component';
 import { ProjectsListComponent } from './projects-list/projects-list.component';
 import { FooterComponent } from './footer/footer.component';
 import { SigninComponent } from './signin/signin.component';
-//import { SignupComponent } from './signup/signup.component';
+import { SignupComponent } from './signup/signup.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { EditFormComponent } from './edit-form/edit-form.component';
 
 
 import { firebaseConfig } from '../environments/environment';
+import { OperationComponent } from './operation/operation.component';
 
 
 const appRoutes: Routes = [
@@ -30,8 +31,17 @@ const appRoutes: Routes = [
     //data: { title: 'Liste des projets' }
   },
   {
+    path: 'operation',
+    component: OperationComponent,
+    //data: { title: 'Liste des projets' }
+  },
+  {
     path: 'signin',
     component: SigninComponent,
+  },
+  {
+    path: 'signup',
+    component: SignupComponent,
   },
   {
     path: 'editform',
@@ -56,10 +66,11 @@ const appRoutes: Routes = [
     ProjectsListComponent,
     FooterComponent,
     SigninComponent,
-    //SignupComponent,
+    SignupComponent,
     ProjectDetailsComponent,
     EditFormComponent,
     PageNotFoundComponent,
+    OperationComponent,
   ],
   imports: [
     AngularFireAuthModule,

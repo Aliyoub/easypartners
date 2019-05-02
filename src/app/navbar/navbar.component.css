@@ -1,15 +1,23 @@
-li a.inscription{
+li a.register{
   background-color:#A5394B;
   color:#ffffff;
 }
-li a.inscription:hover {
+li a.register:hover {
   background-color:#E23237;
 }
 
-li a.connexion{
+li a.login{
   background-color:#2e6da4;
   color:#ffffff;
 }
-li a.connexion:hover {
+li a.login:hover {
   background-color:#337ab7;
+}
+
+li a.NewProject{
+  background-color:#5CB85C;
+  color:#ffffff;
+}
+li a.NewProject:hover {
+  background-color:rgb(153, 221, 153);
 }

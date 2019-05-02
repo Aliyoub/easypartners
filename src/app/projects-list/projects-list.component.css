@@ -3,5 +3,5 @@ ul.list-group li.list-group-item span.label{
   display:inline-block;
 }
 ul.list-group li.list-group-item div{
- font-size: 1em; margin-left: 30%; color:blue;text-align:left;
+ font-size: 1em; margin-left: 30%; color:#333338;text-align:justify
 }
