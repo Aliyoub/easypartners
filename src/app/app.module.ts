@@ -17,6 +17,7 @@ import { SignupComponent } from './signup/signup.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { EditFormComponent } from './edit-form/edit-form.component';
+import { AuthGuardService } from './services/auth-guard.service';
 
 
 import { firebaseConfig } from '../environments/environment';
@@ -24,16 +25,17 @@ import { OperationComponent } from './operation/operation.component';
 
 
 const appRoutes: Routes = [
-  { path: 'project/:id', component: ProjectDetailsComponent },
+  { path: 'project/:id',
+    canActivate: [AuthGuardService],
+    component: ProjectDetailsComponent,
+  },
   {
     path: 'projects',
     component: ProjectsListComponent,
-    //data: { title: 'Liste des projets' }
   },
   {
     path: 'operation',
     component: OperationComponent,
-    //data: { title: 'Liste des projets' }
   },
   {
     path: 'signin',
@@ -43,18 +45,19 @@ const appRoutes: Routes = [
     path: 'signup',
     component: SignupComponent,
   },
-  {
-    path: 'editform',
-    component: EditFormComponent,
-  }
 
-  /*,
-  {
-    path: '',
-    redirectTo: '/projects',
-    pathMatch: 'full'
+  { path: 'editform',
+    canActivate: [AuthGuardService],
+    component: EditFormComponent,
   },
-  { path: '**', component: PageNotFoundComponent }*/
+
+  { path: '', // On est redirigé vers la liste des annonces quand aucun nom de page n'est spécifié
+  redirectTo: 'projects',
+  pathMatch: 'full' },
+
+  { path: '**', // On est redirigé vers la liste des annonces quand la page n'est pas trouvée
+    component: ProjectsListComponent,
+  }
 ];
 
 
