@@ -1,19 +1,45 @@
-<div class="card container" style="margin-bottom:19px">
+<div class="card container">
   <div class="row">
     <h3 style="text-align: center">Liste des annonces</h3>
     <ul class="list-group list-group-flush col-md-8 col-md-offset-2">
-      <li *ngFor="let key of projectKeys; let i=index" class="list-group-item">{{projects[key][3]}}
-          <!-- <div>
-                <span class="label label-warning">{{p.category}}</span>
-                <span class="label label-success"> {{p.country}} </span>
-                <span class="label label-primary">{{p.date}}</span>
-              <span class="label label-danger"><a style="color:#fff" routerLink="/">Répondre</a></span>
-          </div> -->
-          <div>
-                <span class="label label-warning">{{projects[key][2]}}</span>
-                <span class="label label-success"> {{projects[key][1]}} </span>
-                <span class="label label-primary">{{projects[key][0]}}</span>
-              <span class="label label-danger"><a style="color:#fff" routerLink="#">Répondre</a></span>
+      <li *ngFor="let key of projectKeys; let i=index" class="list-group-item">
+        <!--div>{{projects[key].projectContent}}</div-->
+
+        <mat-card>
+          <!--textarea>{{projects[key].projectContent}}</textarea-->
+          <mat-form-field>
+            <textarea style="overflow: hidden"
+            matInput readonly
+            cdkTextareaAutosize
+            #autosize="cdkTextareaAutosize"
+            >{{projects[key].projectContent}}
+          </textarea>
+        </mat-form-field>
+          <mat-card-actions>
+            <button mat-raised-button color="primary" style="cursor:pointer">{{projects[key].date}}</button>
+            <button mat-raised-button color="accent">{{projects[key].country}}</button>
+            <button mat-raised-button>{{projects[key].category}}</button>
+          </mat-card-actions>
+        </mat-card>
+
+
+        <!-- <div>
+          <span class="label label-warning">{{p.category}}</span>
+          <span class="label label-success"> {{p.country}} </span>
+          <span class="label label-primary">{{p.date}}</span>
+          <span class="label label-danger"><a style="color:#fff" routerLink="/">Répondre</a></span>
+        </div> -->
+        <!--div>
+          <span class="label label-warning">{{projects[key].date}}</span>
+          <span class="label label-success"> {{projects[key].country}} </span>
+          <span class="label label-primary">{{projects[key].category}}</span>
+          <span class="label label-danger"><a style="color:#fff; cursor:pointer"
+            (click)="onViewProject(key)">Répondre</a></span>
+          </div-->
+          <div class="example-button-row">
+           <button mat-raised-button color="warn">
+              <a (click)="onViewProject(key)" style="color:#ffffff">Répondre</a>
+            </button>
           </div>
       </li>
     </ul>

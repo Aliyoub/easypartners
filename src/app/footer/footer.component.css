@@ -3,5 +3,8 @@
 }
 
 footer{
-  margin-top: 19px
+  /* margin-top: 19px;
+  margin-bottom: 0;*/
+  position: relative;
+  margin-top: auto;
 }

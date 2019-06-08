@@ -1,3 +1,7 @@
+.navbar {
+  margin-bottom: 7px;
+  position: relative;
+}
 li a.register{
   background-color:#A5394B;
   color:#ffffff;
@@ -20,4 +24,10 @@ li a.NewProject{
 }
 li a.NewProject:hover {
   background-color:rgb(153, 221, 153);
+}
+
+
+.mat-raised-button {
+	line-height: 49px;
+	border-radius: 0px;
 }

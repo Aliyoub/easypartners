@@ -1,7 +1,23 @@
 ul.list-group li.list-group-item span.label{
-  margin-right: 0.01em;
+  margin-right: 0.017em;
   display:inline-block;
 }
 ul.list-group li.list-group-item div{
  font-size: 1em; margin-left: 30%; color:#333338;text-align:justify
+}
+.mat-raised-button {
+  cursor: pointer;
+  white-space: nowrap;
+  text-align: center;
+  line-height: 18px;
+  font-size: 0.79em;
+  margin-right: 1px
+}
+
+textarea.mat-input-element {
+  padding:0;
+  overflow: hidden;
+}
+mat-form-field{
+  width: 100%;
 }

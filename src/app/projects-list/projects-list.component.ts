@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Project } from '../project.model';
 import { ProjectService } from '../services/project.service';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-projects-list',
@@ -12,18 +13,24 @@ export class ProjectsListComponent implements OnInit, OnDestroy {
   projects: Project[];
   projectKeys: string[];
   projectsSubscription: Subscription;
-
-  constructor(private projectService: ProjectService) { }
+  constructor(private projectService: ProjectService, private router: Router) {}
 
   ngOnInit() {
     this.projectsSubscription = this.projectService.projectsSubject.subscribe(
       (projects: Project[]) => {
         this.projects = projects;
         this.projectKeys = Object.keys(this.projects);
-        console.log(this.projects);
+        //console.log(this.projects);
+        /* Object.values(this.projects).forEach(function(element1) {
+          console.log(element1);
+        }); */
       }
     );
     this.projectService.emitProjects();
+  }
+
+  onViewProject(id: number) {
+    this.router.navigate(['/project', id]);
   }
 
   ngOnDestroy() {

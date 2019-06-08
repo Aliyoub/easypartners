@@ -2,6 +2,11 @@
 /* .ql-toolbar.ql-snow {
   width: 1%
 } */
+
+/* @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '@angular/material/prebuilt-themes/pink-bluegrey-amber.css';
+@import '@angular/material/prebuilt-themes/purple-green.css'; */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
 div.ql-toolbar.ql-snow span.ql-formats button svg{
   width:1em
 }

@@ -1,5 +1,5 @@
 <!-- Fixed navbar -->
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-to">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
@@ -23,10 +23,16 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li *ngIf="!isAuth">
-          <a class="register" routerLink="signup">S'inscrire</a>
+          <!--a class="register" routerLink="signup">S'inscrire</a-->
+          <button mat-raised-button color="primary">
+            <a routerLink="signup" style="color:#ffffff">S'inscrire</a>
+          </button>
         </li>
         <li *ngIf="!isAuth">
-          <a class="login" routerLink="signin">Se Connecter</a>
+          <!--a class="login" routerLink="signin">Se Connecter</a-->
+        <button mat-raised-button color="warn">
+          <a routerLink="signin" style="color:#ffffff">Se Connecter</a>
+        </button>
         </li>
         <li *ngIf="isAuth">
           <a class="login" (click)="onSignOut()" style="cursor:pointer" routerLink="signout">Déconnexion</a>

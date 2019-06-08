@@ -1,18 +1,51 @@
 <div class="container" style="margin:19px 0">
   <div class="row col-md-6 col-md-offset-3">
       <form [formGroup]="editorForm" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-          <label for="editor"><h3>Editor</h3></label>
-          <input type="text" placeholder="Votre localité. exemple France" class="form-control" formControlName="country">
-          <input type="text" placeholder="La catégorie de votre domaine d'activité. exemple Santé"  class="form-control" formControlName="category">
-          <label for="editor"><h6>Veuillez entrer le contenu de votre annonce</h6></label>
-          <quill-editor format="text" preserveWhitespace="true"
-            placeholder="Veuillez entrer le contenu de votre annonce"
-            [style]="editorStyle" [modules]="config"
-            formControlName="editor"></quill-editor>
+        <!--div class="form-group"-->
 
-          <button type="submit" class="btn btn-primary">Valider</button>
-        </div>
+          <mat-form-field>
+            <input type="text" matInput placeholder="Pays" formControlName="stateGroup" required [matAutocomplete]="autoGroup">
+            <mat-autocomplete #autoGroup="matAutocomplete">
+              <mat-optgroup *ngFor="let group of stateGroupOptions | async" [label]="group.letter">
+                <mat-option *ngFor="let name of group.names" [value]="name">
+                  {{name}}
+                </mat-option>
+              </mat-optgroup>
+            </mat-autocomplete>
+          </mat-form-field>
+
+          <div>
+            <mat-form-field>
+              <input type="text" matInput placeholder="Veuillez entrer le nom de la categorie" formControlName="category"
+                required [matAutocomplete]="autoGroup2">
+              <mat-autocomplete #autoGroup2="matAutocomplete">
+                <mat-optgroup *ngFor="let group of categoryGroupOptions | async" [label]="group.letter">
+                  <mat-option *ngFor="let name of group.names" [value]="name">
+                    {{name}}
+                  </mat-option>
+                </mat-optgroup>
+              </mat-autocomplete>
+            </mat-form-field>
+          </div>
+
+            <!-- <mat-form-field class="example-full-width">
+              <input matInput formControlName="category"
+               placeholder="Veuillez entrer le nom de la categorie"/>
+            </mat-form-field> -->
+
+            <mat-form-field class="example-full-width">
+              <textarea matInput formControlName="editor"
+               placeholder="Veuillez entrer le contenu de votre annonce"></textarea>
+            </mat-form-field>
+
+              <div class="example-button-row">
+                <button mat-raised-button type="submit" color="primary">Valider</button>
+              </div>
+
+        <!--/div-->
       </form>
+
+
   </div>
+
 </div>
