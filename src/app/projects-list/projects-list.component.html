@@ -5,21 +5,23 @@
       <li *ngFor="let key of projectKeys; let i=index" class="list-group-item">
         <!--div>{{projects[key].projectContent}}</div-->
 
-        <mat-card>
+        <mat-card style="cursor: pointer"><a (click)="onViewProject(key)">
           <!--textarea>{{projects[key].projectContent}}</textarea-->
-          <mat-form-field>
-            <textarea style="overflow: hidden"
-            matInput readonly
-            cdkTextareaAutosize
-            #autosize="cdkTextareaAutosize"
-            >{{projects[key].projectContent}}
-          </textarea>
-        </mat-form-field>
-          <mat-card-actions>
-            <button mat-raised-button color="primary" style="cursor:pointer">{{projects[key].date}}</button>
-            <button mat-raised-button color="accent">{{projects[key].country}}</button>
-            <button mat-raised-button>{{projects[key].category}}</button>
-          </mat-card-actions>
+          <mat-form-field style="cursor: pointer">
+              <textarea style="overflow: hidden; cursor: pointer"
+              matInput readonly
+              cdkTextareaAutosize
+              #autosize="cdkTextareaAutosize">
+              {{projects[key].projectContent}}
+            </textarea>
+          </mat-form-field>
+          <mat-card-actions style="text-align: center; cursor:pointer ">
+            <div>
+              <button mat-raised-button color="primary">{{projects[key].date}}</button>
+              <button mat-raised-button color="accent">{{projects[key].country}}</button>
+              <button mat-raised-button>{{projects[key].category}}</button>
+            </div>
+          </mat-card-actions></a>
         </mat-card>
 
 
@@ -36,11 +38,7 @@
           <span class="label label-danger"><a style="color:#fff; cursor:pointer"
             (click)="onViewProject(key)">Répondre</a></span>
           </div-->
-          <div class="example-button-row">
-           <button mat-raised-button color="warn">
-              <a (click)="onViewProject(key)" style="color:#ffffff">Répondre</a>
-            </button>
-          </div>
+
       </li>
     </ul>
 

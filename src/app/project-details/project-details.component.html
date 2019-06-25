@@ -5,24 +5,25 @@
     </div>
   </div>
 </div>
-<div class="row">
+<!-- <div class="row">
   <div class="col-md-4 col-md-offset-4" style="text-align: center">
     <button class="btn btn-default" (click)="onBack()">Retour</button>
   </div>
-</div>
+</div> -->
 
 <div class="container" style="margin:19px 0">
-  <div class="row col-md-6 col-md-offset-3">
-    <form [formGroup]="editorForm" (ngSubmit)="onSubmit()">
-      <div class="form-group">
-      <!--label for="editor">
-        <h3>Répondez à cette annonce</h3>
-      </label-->
-      <mat-form-field class="example-full-width">
-        <textarea matInput formControlName="editor" placeholder="Répondez à cette annonce"></textarea>
-      </mat-form-field>
-        <div class="example-button-row">
-          <button type="submit" mat-raised-button color="primary">Valider</button>
+    <div class="row col-md-6 col-md-offset-3">
+      <form [formGroup]="editorForm" (ngSubmit)="onSubmit()">
+        <div style="margin:0 auto" class="form-group">
+          <!--label for="editor">
+            <h3>Répondez à cette annonce</h3>
+          </label-->
+          <mat-form-field class="example-full-width">
+            <textarea matInput formControlName="editor" placeholder="Répondez à cette annonce"></textarea>
+          </mat-form-field>
+          <div class="example-button-row onBackOrSubmitDiv">
+            <button mat-raised-button color="accent" (click)="onBack()">Retour</button>
+            <button type="submit" mat-raised-button color="primary">Valider</button>
         </div>
         <!--button type="submit" class="btn btn-primary">Valider</button-->
       </div>

@@ -29,16 +29,18 @@
           </button>
         </li>
         <li *ngIf="!isAuth">
-          <!--a class="login" routerLink="signin">Se Connecter</a-->
-        <button mat-raised-button color="warn">
-          <a routerLink="signin" style="color:#ffffff">Se Connecter</a>
-        </button>
+            <!--a class="login" routerLink="signin">Se Connecter</a-->
+          <button mat-raised-button color="warn">
+            <a routerLink="signin" style="color:#ffffff">Se Connecter</a>
+          </button>
         </li>
         <li *ngIf="isAuth">
-          <a class="login" (click)="onSignOut()" style="cursor:pointer" routerLink="signout">Déconnexion</a>
+          <a class="login" mat-raised-button color="primary" (click)="onSignOut()" style="cursor:pointer" routerLink="signout">Déconnexion</a>
+          <!-- <a class="login" (click)="onSignOut()" style="cursor:pointer" routerLink="signout">Déconnexion</a> -->
         </li>
         <li *ngIf="isAuth">
-          <a class="NewProject" routerLink="editform">Nouveau Projet</a>
+          <a class="NewProject" mat-raised-button color="accent" routerLink="editform">Nouveau Projet</a>
+          <!-- <a class="NewProject" routerLink="editform">Nouveau Projet</a> -->
         </li>
       </ul>
     </div>

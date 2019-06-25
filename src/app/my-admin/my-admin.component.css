@@ -1,0 +1,16 @@
+.full-width-table {
+  width: 100%;
+}
+.actionClear, .actionCreate, .actionVisibility {
+  font-size: 1.7em;
+  font-weight: 200;
+}
+.actionClear {
+  color: rgb(202, 10, 10);
+}
+.actionCreate {
+  color: rgb(69, 26, 224);
+}
+.actionVisibility {
+  color: rgb(0, 132, 255);
+}

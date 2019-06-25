@@ -3,6 +3,7 @@ import * as firebase from 'firebase';
 import { Subject  } from 'rxjs';
 import { Project } from '../project.model';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -38,6 +39,13 @@ export class ProjectService {
       }
     );
   }
+  deleteProject(id: any) {
+    firebase.database().ref('projects/' + id).set(null);
+  }
+  updateProject(id: any, updates: any) {
+    firebase.database().ref('projects/' + id).update(updates);
+  }
+
 
   createNewProject(newProject: Project[]) {
     // je recupere les valeurs des éléments(input,..) dans un tableau

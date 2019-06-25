@@ -17,3 +17,10 @@ div.ql-tooltip.ql-hidden input {
   display: none;
 
 }
+
+/********
+LA BARRE SOUS LES ANNONCES
+***************/
+mat-card .mat-form-field-underline {
+  display: none;
+}

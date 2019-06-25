@@ -14,14 +14,14 @@ import { FooterComponent } from './footer/footer.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
+import { OperationComponent } from './operation/operation.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { EditFormComponent } from './edit-form/edit-form.component';
 import { AuthGuardService } from './services/auth-guard.service';
-
+import { MyAdminComponent } from './my-admin/my-admin.component';
+import { DialogComponent } from './my-admin/dialog/dialog.component';
 
 import { firebaseConfig } from '../environments/environment';
-import { OperationComponent } from './operation/operation.component';
-
 
 import { A11yModule } from '@angular/cdk/a11y';
 import { DragDropModule } from '@angular/cdk/drag-drop';
@@ -70,6 +70,10 @@ import {
   MatTreeModule,
   MatFormFieldModule
 } from '@angular/material';
+/* import { MatMomentDateModule, MAT_MOMENT_DATE_FORMATS, MomentDateAdapter  } from '@angular/material-moment-adapter';
+import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core'; */
+//import { } from '@angular/material-moment-adapter';
+
 
 
 const appRoutes: Routes = [
@@ -95,8 +99,12 @@ const appRoutes: Routes = [
   },
 
   { path: 'editform',
-    canActivate: [AuthGuardService],
+  canActivate: [AuthGuardService],
     component: EditFormComponent,
+  },
+  {
+    path: 'myad2675min',
+    component: MyAdminComponent,
   },
 
   { path: '', // On est redirigé vers la liste des annonces quand aucun nom de page n'est spécifié
@@ -122,6 +130,8 @@ const appRoutes: Routes = [
     EditFormComponent,
     PageNotFoundComponent,
     OperationComponent,
+    MyAdminComponent,
+    DialogComponent
   ],
   imports: [
     AngularFireAuthModule,
@@ -138,9 +148,23 @@ const appRoutes: Routes = [
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatDialogModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    /* MatMomentDateModule */
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  /* providers: [
+    { provide: MAT_DATE_LOCALE, useValue: 'fr-FR' },
+
+    { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
+    { provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS },
+  ], */
+  bootstrap: [AppComponent],
+  entryComponents: [DialogComponent]
 })
 export class AppModule { }

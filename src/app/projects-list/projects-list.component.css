@@ -1,3 +1,4 @@
+
 ul.list-group li.list-group-item span.label{
   margin-right: 0.017em;
   display:inline-block;
@@ -15,9 +16,33 @@ ul.list-group li.list-group-item div{
 }
 
 textarea.mat-input-element {
+  font-family: "Roboto", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.7rem;
+  font-weight: normal;
+  line-height: 1.5;
+  color: #535556;
   padding:0;
   overflow: hidden;
 }
+
 mat-form-field{
   width: 100%;
+}
+
+/***
+Le bloc au pied des annonces : date, pays, categorie
+***/
+.mat-card-actions .mat-raised-button {
+  border-radius: 0px;
+  margin: 0;
+}
+
+.mat-card-actions,
+.mat-card-content,
+.mat-card-subtitle {
+  margin-bottom: 0px;
+}
+
+mat-card{
+  padding-bottom: 0px
 }
